@@ -34,24 +34,24 @@ big_num = kara(123456789,987654321)
 print(big_num)
 
 # 方法二：
-# def recursive_multiply(x, y, n):
-#   if n == 1:
-#     return x * y
-#
-#   else:
-#     a = x / pow(10, n / 2)
-#     b = x - a * pow(10, n / 2)
-#     c = y / pow(10, n / 2)
-#     d = y - c * pow(10, n / 2)
-#
-#     ac = recursive_multiply(a, c, n / 2)
-#     bd = recursive_multiply(b, d, n / 2)
-#     p = recursive_multiply(a + b, c + d, n / 2) - ac - bd
-#
-#     return ac * pow(10, n) + p * pow(10, n / 2) + bd
-#
-# if __name__ == '__main__':
-#   r = recursive_multiply(1234, 5678, 4)
-#   print(r)
+def recursive_multiply(x, y, n):
+  if n == 1:
+    return x * y
+
+  else:
+    a = x / pow(10, n / 2)
+    b = x - a * pow(10, n / 2)
+    c = y / pow(10, n / 2)
+    d = y - c * pow(10, n / 2)
+
+    ac = recursive_multiply(a, c, n / 2)
+    bd = recursive_multiply(b, d, n / 2)
+    p = recursive_multiply(a + b, c + d, n / 2) - ac - bd
+
+    return ac * pow(10, n) + p * pow(10, n / 2) + bd
+
+if __name__ == '__main__':
+  r = recursive_multiply(1234, 5678, 4)
+  print(r)
 
 #方法三：
